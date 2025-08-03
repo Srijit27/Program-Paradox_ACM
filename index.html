@@ -119,8 +119,8 @@
             right: 0;
             z-index: 100;
             background-color: rgba(15, 23, 42, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -236,7 +236,7 @@
     <nav class="navbar">
         <div class="flex items-center justify-between w-full">
             <div class="flex items-center">
-                <img src="https://placehold.co/100x50/1f2937/9ca3af?text=College+Logo" alt="College Logo" class="logo">
+                <img src="TheHeritageLogo.png" alt="College Logo" class="logo">
             </div>
             <div class="flex items-center justify-center flex-grow space-x-4 text-lg">
                 <a href="#slide-2" class="nav-link">Historical Context</a>
@@ -245,7 +245,7 @@
                 <a href="#slide-9" class="nav-link">More Info</a>
             </div>
             <div class="flex items-center">
-                <img src="https://placehold.co/100x50/1f2937/9ca3af?text=Student+Chapter+Logo" alt="Student Chapter Logo" class="logo">
+                <img src="acmhitk.png" alt="Student Chapter Logo" class="logo">
             </div>
         </div>
         <style>
@@ -275,6 +275,7 @@
     <main class="w-full">
         <!-- Slide 1: Title Slide -->
         <section id="slide-1" class="slide">
+            <img src="pic1.jpg" alt="A complex knot or maze representing an unsolvable problem." class="mt-8 mb-8 rounded-lg shadow-xl max-w-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x300';">
             <div class="max-w-4xl text-center">
                 <h1 class="text-5xl md:text-7xl font-black text-indigo-400">The Program That Cannot Be Written!</h1>
                 <h2 class="text-3xl md:text-4xl text-gray-300 mt-4">Understanding the Halting Problem</h2>
@@ -284,7 +285,7 @@
                     <p class="text-xl">ACM HITK Student Chapter</p>
                 </div>
             </div>
-            <img src="https://placehold.co/800x400/1f2937/9ca3af?text=A+complex+knot+or+maze" alt="A complex knot or maze representing an unsolvable problem." class="mt-8 rounded-lg shadow-xl max-w-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x300';">
+            <!-- <img src="pic1.jpg" alt="A complex knot or maze representing an unsolvable problem." class="mt-8 rounded-lg shadow-xl max-w-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x300';"> -->
         </section>
 
         <!-- Slide 2: A World of Paradoxes -->
@@ -319,7 +320,7 @@
                     <p class="mt-2 text-xl text-gray-300">A young genius who proved that Hilbert's dream was, ironically, impossible to compute, laying the foundation for all modern computers.</p>
                 </div>
             </div>
-            <img src="https://placehold.co/800x400/1f2937/9ca3af?text=Hilbert+vs+Turing" alt="A historical photo collage of David Hilbert and Alan Turing, representing the clash of their ideas." class="mt-8 rounded-lg shadow-xl max-w-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x300';">
+            <img src="pic2.png" alt="A historical photo collage of David Hilbert and Alan Turing, representing the clash of their ideas." class="mt-8 rounded-lg shadow-xl max-w-2xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x300';">
         </section>
 
         <!-- Slide 4: What is a Turing Machine? -->
@@ -464,7 +465,7 @@
         </section>
     </main>
 
-    <!-- <div class="fixed bottom-0 left-0 w-full p-4 bg-gray-900/50 backdrop-blur-sm border-t border-gray-700 z-50" style="-webkit-backdrop-filter: blur(5px);"> -->
+    <div class="fixed bottom-0 left-0 w-full p-4 bg-gray-900/50 backdrop-blur-sm border-t border-gray-700 z-50" style="-webkit-backdrop-filter: blur(5px);">
         <div class="max-w-7xl mx-auto flex justify-center items-center space-x-4">
             <button id="prevBtn" class="px-6 py-2 bg-gray-700 text-white rounded-md glow-button hover:bg-gray-600 transition-colors">Previous</button>
             <button id="nextBtn" class="px-6 py-2 bg-indigo-600 text-white rounded-md glow-button hover:bg-indigo-700 transition-colors">Next</button>
