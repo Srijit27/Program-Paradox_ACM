@@ -265,11 +265,11 @@
 <body class="w-full">
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="flex items-center justify-between w-full">
+        <div class="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
             <div class="flex items-center">
                 <img src="TheHeritageLogo.png" alt="College Logo" class="logo">
             </div>
-            <div class="flex items-center justify-center flex-grow space-x-4 text-lg">
+            <div class="hidden md:flex items-center justify-center flex-grow space-x-2 lg:space-x-4 text-base lg:text-lg">
                 <a href="#slide-2" class="nav-link">Historical Context</a>
                 <a href="#slide-4" class="nav-link">Turing Machine</a>
                 <a href="#slide-5" class="nav-link">The Halting Problem</a>
@@ -278,21 +278,82 @@
             <div class="flex items-center">
                 <img src="acmhitk.png" alt="Student Chapter Logo" class="logo">
             </div>
+            <button class="hamburger md:hidden" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu md:hidden fixed top-[70px] left-0 right-0 bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-gray-700 transform -translate-y-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+            <div class="flex flex-col p-4 space-y-2 h-full">
+                <a href="#slide-2" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">Historical Context</a>
+                <a href="#slide-4" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">Turing Machine</a>
+                <a href="#slide-5" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">The Halting Problem</a>
+                <a href="#slide-9" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">More Info</a>
+            </div>
         </div>
         <style>
             .nav-link {
                 color: #cbd5e1;
                 text-decoration: none;
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 0.75rem;
                 border-radius: 0.25rem;
                 transition: all 0.3s ease;
                 white-space: nowrap;
                 border: 1px solid transparent;
+                font-size: 0.9rem;
             }
             .nav-link:hover {
                 color: #fff;
                 box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
                 border-color: #818cf8;
+            }
+            .nav-link-mobile {
+                color: #cbd5e1;
+                text-decoration: none;
+                display: block;
+                border-radius: 0.25rem;
+                transition: all 0.3s ease;
+            }
+            .nav-link-mobile:hover {
+                background-color: rgba(99, 102, 241, 0.2);
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30px;
+                height: 30px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 101;
+            }
+            .hamburger span {
+                width: 100%;
+                height: 3px;
+                background: #818cf8;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            @media (min-width: 1024px) {
+                .nav-link {
+                    padding: 0.5rem 1rem;
+                    font-size: 1rem;
+                }
             }
         </style>
     </nav>
