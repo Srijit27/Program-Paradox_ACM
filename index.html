@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -265,91 +265,54 @@
 <body class="w-full">
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="flex items-center justify-between w-full max-w-7xl mx-auto px-4 relative">
-            <div class="flex items-center flex-shrink-0">
-                <img src="TheHeritageLogo.png" alt="College Logo" class="logo">
+        <div class="flex items-center justify-center w-full max-w-7xl mx-auto px-4 relative space-x-4">
+            <div class="flex items-center flex-shrink-0 max-w-[120px] overflow-visible">
+                <img src="acmhitk.png" alt="College Logo" class="logo max-w-full h-auto object-contain">
             </div>
-            <div class="hidden md:flex items-center justify-center flex-grow space-x-2 lg:space-x-4 text-base lg:text-lg">
-                <a href="#slide-2" class="nav-link">Historical Context</a>
-                <a href="#slide-4" class="nav-link">Turing Machine</a>
-                <a href="#slide-5" class="nav-link">The Halting Problem</a>
-                <a href="#slide-9" class="nav-link">More Info</a>
-            </div>
-            <button class="hamburger md:hidden absolute right-4 top-1/2 transform -translate-y-1/2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-[70px] left-0 right-0 bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-gray-700 transform -translate-y-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto" role="menu" aria-hidden="true">
-            <div class="flex flex-col p-4 space-y-2 h-full">
-                <a href="#slide-2" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">Historical Context</a>
-                <a href="#slide-4" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">Turing Machine</a>
-                <a href="#slide-5" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">The Halting Problem</a>
-                <a href="#slide-9" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">More Info</a>
+            <div class="flex-grow text-center">
+                <h1 class="text-indigo-400 font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Program Paradox</h1>
             </div>
         </div>
         <style>
-            .nav-link {
-                color: #cbd5e1;
-                text-decoration: none;
-                padding: 0.5rem 0.75rem;
-                border-radius: 0.25rem;
-                transition: all 0.3s ease;
-                white-space: nowrap;
-                border: 1px solid transparent;
-                font-size: 0.9rem;
-            }
-            .nav-link:hover {
-                color: #fff;
-                box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-                border-color: #818cf8;
-            }
-            .nav-link-mobile {
-                color: #cbd5e1;
-                text-decoration: none;
-                display: block;
-                border-radius: 0.25rem;
-                transition: all 0.3s ease;
-            }
-            .nav-link-mobile:hover {
-                background-color: rgba(99, 102, 241, 0.2);
-            }
-            .hamburger {
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: rgba(15, 23, 42, 0.85);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #4b5563;
+            transition: all 0.3s ease;
+        }
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+                background-color: rgba(15, 23, 42, 0.95);
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+                padding: 1rem 2rem;
                 display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                width: 30px;
-                height: 30px;
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                padding: 0;
-                z-index: 101;
-            }
-            .hamburger span {
-                width: 100%;
-                height: 3px;
-                background: #818cf8;
-                border-radius: 10px;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #4b5563;
                 transition: all 0.3s ease;
             }
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
+            .logo {
+                height: 50px;
+                width: auto;
             }
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-            .mobile-menu.active {
-                transform: translateY(0);
-            }
-            @media (min-width: 1024px) {
-                .nav-link {
-                    padding: 0.5rem 1rem;
-                    font-size: 1rem;
+            @media (max-width: 768px) {
+                .navbar {
+                    padding: 1.05rem 2rem; /* 5% taller navbar on mobile */
                 }
             }
         </style>
