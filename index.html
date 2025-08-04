@@ -111,6 +111,22 @@
         #slide-9 li:hover {
             background-color: #312e81;
         }
+
+        /* Glow hover effect for paradox output box */
+        #paradox-output, #quiz-output {
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            background-color: rgba(55, 48, 71, 0.85);
+            padding: 1rem;
+        }
+        #paradox-output:hover, #quiz-output :hover {
+            box-shadow: 0 0 15px rgba(147, 112, 219, 0.7);
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+            background-color: rgba(55, 48, 71, 0.9);
+        }
+
         /* Navbar styles */
         .navbar {
             position: fixed;
@@ -127,6 +143,21 @@
             align-items: center;
             border-bottom: 1px solid #4b5563;
             transition: all 0.3s ease;
+        }
+
+        /* Glow and hover effect for analogy output box */
+        #analogy-output, #quiz-output {
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            border-radius: 0.75rem;
+            background-color: rgba(55, 48, 71, 0.85);
+            padding: 1rem;
+        }
+        #analogy-output:hover, #quiz-output :hover {
+            box-shadow: 0 0 15px rgba(147, 112, 219, 0.7);
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+            background-color: rgba(55, 48, 71, 0.9);
         }
         
         .navbar.scrolled {
@@ -302,7 +333,8 @@
                     <p class="mt-2 text-xl text-gray-300">A barber shaves only those men who do not shave themselves. Who then shaves the barber?</p>
                 </div>
                 <button id="generate-paradox-btn" class="mt-8 px-6 py-3 bg-indigo-600 text-white font-bold rounded-full hover:bg-indigo-700 transition-colors glow-button">✨ Generate a New Paradox</button>
-                <div id="paradox-output" class="mt-4 p-4 text-center text-lg text-gray-200 hidden bg-gray-800 border-l-4 border-indigo-400 rounded-lg"></div>
+                <div id="paradox-output" class="mt-4 p-4 text-center text-lg text-gray-200 hidden bg-gray-800 border-l-4 border-indigo-400 rounded-lg" style="transition: all 0.3s ease; border-radius: 0.75rem; background-color: rgba(55, 48, 71, 0.85); padding: 1rem;">
+                </div>
             </div>
         </section>
 
