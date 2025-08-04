@@ -461,8 +461,8 @@
                 <h2 class="text-4xl md:text-5xl font-black text-indigo-400 mb-4">A Sneaky Program to Break the Rules</h2>
                 <p class="text-xl text-gray-400 mb-6">Turing's genius was in a proof by contradiction. He assumed a universal program H exists, then constructed a clever program to make H lie.</p>
                 <p class="text-2xl text-gray-300 mb-6">We'll assume our magical program <span class="font-bold text-blue-400">H</span> exists. Then, we write a new, clever program called <span class="font-bold text-red-400">Trouble</span>:</p>
-                <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg text-left">
-                    <pre><code class="language-python text-lg">def Trouble(P):
+                <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg text-left overflow-x-auto max-w-full">
+                    <pre class="whitespace-pre-wrap break-words"><code class="language-python text-lg">def Trouble(P):
     # Using our hypothetical program H
     if H(P, P) == True:  # If H says P halts...
         loop_forever() # ...we make Trouble loop forever
