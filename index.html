@@ -265,8 +265,8 @@
 <body class="w-full">
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="flex items-center justify-between w-full max-w-7xl mx-auto px-4">
-            <div class="flex items-center">
+        <div class="flex items-center justify-between w-full max-w-7xl mx-auto px-4 relative">
+            <div class="flex items-center flex-shrink-0">
                 <img src="TheHeritageLogo.png" alt="College Logo" class="logo">
             </div>
             <div class="hidden md:flex items-center justify-center flex-grow space-x-2 lg:space-x-4 text-base lg:text-lg">
@@ -275,21 +275,18 @@
                 <a href="#slide-5" class="nav-link">The Halting Problem</a>
                 <a href="#slide-9" class="nav-link">More Info</a>
             </div>
-            <div class="flex items-center">
-                <img src="acmhitk.png" alt="Student Chapter Logo" class="logo">
-            </div>
-            <button class="hamburger md:hidden" aria-label="Toggle menu">
+            <button class="hamburger md:hidden absolute right-4 top-1/2 transform -translate-y-1/2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
-        <div class="mobile-menu md:hidden fixed top-[70px] left-0 right-0 bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-gray-700 transform -translate-y-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-[70px] left-0 right-0 bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-gray-700 transform -translate-y-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto" role="menu" aria-hidden="true">
             <div class="flex flex-col p-4 space-y-2 h-full">
-                <a href="#slide-2" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">Historical Context</a>
-                <a href="#slide-4" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">Turing Machine</a>
-                <a href="#slide-5" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">The Halting Problem</a>
-                <a href="#slide-9" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors">More Info</a>
+                <a href="#slide-2" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">Historical Context</a>
+                <a href="#slide-4" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">Turing Machine</a>
+                <a href="#slide-5" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">The Halting Problem</a>
+                <a href="#slide-9" class="nav-link-mobile py-2 px-4 text-gray-300 hover:text-white transition-colors" role="menuitem" tabindex="-1">More Info</a>
             </div>
         </div>
         <style>
@@ -710,17 +707,22 @@
         
         // Hamburger menu functionality
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
+        const mobileMenu = document.getElementById('mobile-menu');
+
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('active');
+            mobileMenu.setAttribute('aria-hidden', expanded);
             hamburger.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.classList.remove('active');
             });
         });
