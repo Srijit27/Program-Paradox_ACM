@@ -659,7 +659,7 @@
             const outputDiv = document.getElementById('quiz-output');
             outputDiv.textContent = 'Creating a quiz question...';
             outputDiv.classList.remove('hidden');
-            const prompt = "Generate one multiple-choice question with four options (a, b, c, d) and the correct answer about a real-world implication of the Halting Problem, such as antivirus software or compilers. Use a newline to separate the question, options, and answer. Format the response like this: \nQuestion: \nOption a: \nOption b: \nOption c: \nOption d: \nCorrect Answer: ";
+            const prompt = "Generate one multiple-choice question with four options (a, b, c, d) and the correct answer about a real-world implication of the Halting Problem. Use a newline to separate the question, options, and answer. Format the response like this: \nQuestion: \nOption a: \nOption b: \nOption c: \nOption d: \nCorrect Answer: ";
             const response = await callGeminiApi(prompt);
             outputDiv.textContent = response;
         }
